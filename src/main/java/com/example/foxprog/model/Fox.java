@@ -1,9 +1,16 @@
 package com.example.foxprog.model;
 
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 public class Fox {
+    @Id
+    private int id;
     protected String name;
     protected Drink drink;
     protected Food food;
