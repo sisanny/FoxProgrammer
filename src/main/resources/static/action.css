@@ -1,0 +1,10 @@
+body {
+    background-image: url("index.png");
+}
+
+.whole {
+    margin-top: 25px;
+    font-size: 30px;
+    color: dimgray;
+    text-align: center;
+}

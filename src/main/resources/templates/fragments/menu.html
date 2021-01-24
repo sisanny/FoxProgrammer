@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <link rel="stylesheet" th:href="@{/menu.css}">
+    <meta charset="UTF-8">
+    <title>Menu</title>
+</head>
+<body>
+<nav th:fragment="navbar (fox)">
+    <div class="header">
+        <a th:text="'Information'" th:href="'/?name=' + ${fox}"></a>
+        <a th:text="'Nutrition Store'" th:href="'/nutritionStore?name=' + ${fox}"></a>
+        <a th:text="'Trick Store'" th:href="'/trick?name=' + ${fox}"></a>
+        <a th:text="'Action History'" th:href="'/actionHistory?name=' + ${fox}"></a>
+        <a th:text="'Well Being'" th:href="'/wellbeing?name=' + ${fox}"></a>
+    </div>
+</nav>
+</body>
+</html>

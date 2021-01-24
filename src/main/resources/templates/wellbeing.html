@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/menu.css}">
+    <link rel="stylesheet" th:href="@{/action.css}">
+    <meta charset="UTF-8">
+    <title>Well being</title>
+</head>
+<body>
+<div th:object="${fox}" th:replace="fragments/menu::navbar (fox=${fox.getName()})"></div>
+<div class="whole">
+    <form action="/wellbeing" method="post">
+        <label for="treat">Treat: </label>
+        <select id="treat" name="treatString">
+            <option th:each="t : ${treatList}" th:value="${t.toString()}" th:text="${t}"></option>
+        </select>
+        <input type="submit" value="Treat">
+        <input type="hidden" name="name" th:value="${fox.getName()}">
+    </form>
+    <p th:text="'Your fox, ' + ${fox.getName()} +' deserves some treat or care !'"></p>
+</div>
+</body>
+</html>

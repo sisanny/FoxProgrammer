@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/login.css}">
+    <meta charset="UTF-8">
+    <title>Programmer fox Login Page</title>
+</head>
+<body>
+<div id="background">
+    <main>
+        <h1>Welcome to Programmer Fox Club!</h1>
+        <p th:if="${warn}" th:style="'color: red'">You have provided a name that has not been used before, add it as a
+            new one!</p>
+        <p>Please provide a name ....</p>
+        <form action="/login" method="post">
+            <input id="input-name" type="text" name="name" placeholder="name of your fox"/>
+            <button id="go" type="submit" value="GO"> Go</button>
+        </form>
+    </main>
+</div>
+</body>
+</html>

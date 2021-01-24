@@ -1,0 +1,15 @@
+body {
+    background-image: url("index.png");
+}
+
+.whole {
+    margin-top: 55px;
+    font-size: 30px;
+    color: dimgray;
+    text-align: center;
+}
+
+select {
+    background-color: transparent;
+    border-color: transparent;
+}

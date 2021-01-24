@@ -1,0 +1,29 @@
+body {
+    background-image: url("index.png");
+}
+
+.whole {
+    margin-top: 55px;
+    font-size: 30px;
+    color: dimgray;
+    text-align: center;
+}
+
+select {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+#change {
+    width: 100px;
+    height: 50px;
+    font-size: 17px;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+#change:hover {
+    pointer-events: painted;
+    color: lime;
+    cursor: pointer;
+}

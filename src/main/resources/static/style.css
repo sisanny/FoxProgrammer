@@ -1,0 +1,51 @@
+body {
+    background-image: url("index.png");
+    background-repeat: no-repeat;
+    color: dimgray;
+}
+
+#name {
+    font-size: 35px;
+}
+
+.container {
+    display: flex;
+    margin-top: 80px;
+}
+
+.underpic {
+    margin-left: 760px;
+    width: 360px;
+    text-align: center;
+}
+
+img {
+    margin-left: 850px;
+    margin-right: 250px;
+}
+
+#listoftricks {
+    text-align: center;
+}
+
+h1 {
+    margin-top: 17px;
+}
+
+ul {
+    margin-left: -50px;
+}
+
+.nameandstuff {
+    text-align: center;
+}
+
+.actions {
+    margin: 100px 100px 0 100px;
+    text-align: center;
+    border-top: 1px solid dimgray;
+}
+
+#tricklistempty {
+    width: 300px;
+}

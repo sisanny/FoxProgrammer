@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <link rel="stylesheet" th:href="@{/menu.css}">
+    <link rel="stylesheet" th:href="@{/action.css}">
+    <meta charset="UTF-8">
+    <title>Actions</title>
+</head>
+<body>
+<div th:replace="fragments/menu::navbar (fox=${fox.getName()})"></div>
+<div class="whole">
+    <h1>Actions</h1>
+    <div th:object="${fox}">
+        <ul th:if="*{actions.size() > 0}" th:each="action : *{actions}">
+            <li th:text="${action}"></li>
+        </ul>
+        <p th:if="*{actions.size() == 0}" th:text="'No action were taken, yet. Go and learn or change nutritions.'"></p>
+    </div>
+</div>
+</body>
+</html>

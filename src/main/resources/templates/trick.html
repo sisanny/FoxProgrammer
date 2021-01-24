@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>Trick</title>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <link rel="stylesheet" th:href="@{/menu.css}">
+    <link rel="stylesheet" th:href="@{/action.css}">
+    <meta charset="UTF-8">
+    <title>Nutrition Store</title>
+</head>
+<body>
+<div th:object="${fox}" th:replace="fragments/menu::navbar (fox=${fox.getName()})"></div>
+<div class="whole">
+    <form action="/trick" method="post">
+        <label for="trick">Trick: </label>
+        <select id="trick" name="trick">
+            <option th:each="t : ${trickList}" th:value="${t}" th:text="${t}"></option>
+        </select>
+        <input type="submit" value="Learn">
+        <input type="hidden" name="name" th:value="${fox.getName()}">
+    </form>
+    <p th:if="${trickList.isEmpty()}" th:text="'Your fox, ' + ${fox.getName()} +
+' had already learned all the tricks!'"></p>
+</div>
+</body>
+</html>

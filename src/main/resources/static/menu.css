@@ -1,0 +1,17 @@
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 600px;
+    margin-bottom: 100px;
+}
+
+a {
+    text-decoration: none;
+    color: dimgray;
+    margin: 5px 20px 0 20px;
+}
+
+a:hover {
+    pointer-events: painted;
+    color: lightgray;
+}

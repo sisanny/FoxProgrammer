@@ -1,0 +1,38 @@
+body {
+    background-image: url("forest4.jpg");
+    background-repeat: no-repeat;
+}
+
+h1 {
+    color: dimgray;
+}
+
+main {
+    margin-top: 380px;
+    text-align: center;
+    color: dimgray;
+    font-size: 25px;
+}
+
+input {
+    background-color: transparent;
+    border-color: transparent;
+    margin-left: 140px;
+}
+
+button {
+    width: 80px;
+    height: 50px;
+    position: relative;
+    top: 60px;
+    left: -230px;
+    font-size: 25px;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+#go:hover {
+    pointer-events: painted;
+    color: lime;
+    cursor: pointer;
+}

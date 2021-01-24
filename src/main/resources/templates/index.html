@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/menu.css}">
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <meta charset="UTF-8">
+    <title>Information</title>
+</head>
+<body>
+<div th:replace="fragments/menu::navbar (fox=${fox.getName()})"></div>
+<div class="whole" th:object="${fox}">
+    <div class="nameandstuff">
+        <p id="name" th:text="'This is ' + *{name} + '.' "></p>
+        <p th:text="' Currently living on ' + *{food} + ' and ' + *{drink} + '. He knows ' + *{trickList.size()} + ' tricks.'"></p>
+    </div>
+    <div class="container">
+        <div class="left">
+            <div th:switch="*{mood}">
+                <div th:case="*{mood.NORMAL}">
+                    <img src="greenfox.png" alt="Greenfox logo"/>
+                </div>
+                <div th:case="*{mood.HAPPY}">
+                    <img src="happyfox.png" alt="Greenfox Happy logo"/>
+                    <p class="underpic"
+                       th:text="'Your fox is happy because of the recent pet you gave to it, keep doing that!'"></p>
+                </div>
+                <div th:case="*{mood.LOVED}">
+                    <img src="lovefox.png" alt="Greenfox Love logo"/>
+                    <p class="underpic"
+                       th:text="'A nice hug brings everyone closer to one another! Your fox is feeling loved:)'"></p>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <h1>Known tricks</h1>
+            <ul th:if="*{trickList.size() > 0}" th:each="trick : *{trickList}">
+                <li id="listoftricks" th:text="${trick}"></li>
+            </ul>
+            <p id="tricklistempty" th:if="*{trickList.size() == 0}"
+               th:text="'Your fox does not any no tricks, yet. Go and learn some at the trick store.'"></p>
+        </div>
+    </div>
+    <div class="actions">
+        <h1>Actions (recent)</h1>
+        <ul th:if="*{actions.size() > 0}" th:each="action : ${foxActionList}">
+            <li th:text="${action}"></li>
+        </ul>
+        <p th:if="*{actions.size() == 0}" th:text="'No action were taken, yet. Go and learn or change nutritions.'"></p>
+    </div>
+</div>
+</body>
+</html>
