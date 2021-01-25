@@ -26,12 +26,12 @@ public class MainController {
             return "redirect:/login";
         } else {
             Fox fox = foxService.getFox(foxName);
-            fox.moodChanger();
+            //fox.moodChanger();
             if (fox == null) {
                 return "redirect:/login?warn=true";
             }
             model.addAttribute("fox", fox);
-            model.addAttribute("foxActionList", fox.getActions().stream().limit(5).collect(Collectors.toList()));
+            //model.addAttribute("foxActionList", fox.getActions().stream().limit(5).collect(Collectors.toList()));
             return "index";
         }
     }

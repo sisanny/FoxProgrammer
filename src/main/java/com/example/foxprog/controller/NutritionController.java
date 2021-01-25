@@ -32,8 +32,8 @@ public class NutritionController {
         Fox newFox = foxService.getFox(fox.getName());
         newFox.setDrink(Drink.valueOf(drink.toUpperCase()));
         newFox.setFood(Food.valueOf(food.toUpperCase()));
-        newFox.addAction(foxService.getDate() + " " + fox.getName() + " is drinking from now " + drink);
-        newFox.addAction(foxService.getDate() + " " + fox.getName() + " is eating from now " + food);
+        //newFox.addAction(foxService.getDate() + " " + fox.getName() + " is drinking from now " + drink);
+        //newFox.addAction(foxService.getDate() + " " + fox.getName() + " is eating from now " + food);
         return "redirect:/?name=" + fox.getName();
     }
 }

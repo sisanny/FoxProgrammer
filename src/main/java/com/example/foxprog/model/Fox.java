@@ -2,6 +2,7 @@ package com.example.foxprog.model;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.util.ArrayList;
@@ -11,12 +12,13 @@ import java.util.List;
 public class Fox {
     @Id
     private int id;
+    @Column
     protected String name;
     protected Drink drink;
     protected Food food;
-    protected List<Trick> trickList;
-    protected List<String> actions;
-    protected List<Treat> treatList;
+    //protected List<Trick> trickList;
+    //protected List<String> actions;
+    //protected List<Treat> treatList;
     protected Mood mood;
 
     public Fox() {
@@ -26,18 +28,18 @@ public class Fox {
         this.name = name;
         this.drink = drink;
         this.food = food;
-        this.trickList = tricks;
-        this.actions = actions;
-        this.treatList = treatList;
+        //this.trickList = tricks;
+        //this.actions = actions;
+        //this.treatList = treatList;
     }
 
     public Fox(String name) {
         this.name = name;
         this.drink = Drink.BEER;
         this.food = Food.MUFFIN;
-        trickList = new ArrayList<Trick>();
-        actions = new ArrayList<String>();
-        treatList = new ArrayList<Treat>();
+        //trickList = new ArrayList<Trick>();
+        //actions = new ArrayList<String>();
+        //treatList = new ArrayList<Treat>();
         this.mood = Mood.NORMAL;
     }
 
@@ -45,9 +47,9 @@ public class Fox {
         this.name = name;
         this.drink = Drink.BEER;
         this.food = Food.MUFFIN;
-        trickList = new ArrayList<Trick>();
-        actions = new ArrayList<String>();
-        treatList = new ArrayList<Treat>();
+        //trickList = new ArrayList<Trick>();
+        //actions = new ArrayList<String>();
+        //treatList = new ArrayList<Treat>();
     }
 
     public void setName(String name) {
@@ -56,10 +58,6 @@ public class Fox {
 
     public String getName() {
         return name;
-    }
-
-    public List<Trick> getTrickList() {
-        return trickList;
     }
 
     public Drink getDrink() {
@@ -78,15 +76,7 @@ public class Fox {
         this.food = food;
     }
 
-    public List<String> getActions() {
-        return actions;
-    }
-
-    public void addAction(String action) {
-        actions.add(action);
-    }
-
-    public Mood moodChanger() {
+    /*public Mood moodChanger() {
         if (actions.isEmpty()) {
             mood = Mood.NORMAL;
         } else if (!actions.isEmpty() && actions.get(actions.size() - 1).contains("hug")) {
@@ -95,7 +85,7 @@ public class Fox {
             mood = Mood.HAPPY;
         } else mood = Mood.NORMAL;
         return mood;
-    }
+    }*/
 
     public Mood getMood() {
         return mood;

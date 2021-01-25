@@ -21,7 +21,7 @@ public class TrickController {
         this.foxService = foxService;
     }
 
-    @GetMapping(path = "/trick")
+   /* @GetMapping(path = "/trick")
     public String learTricks(Model model, @RequestParam(name = "name") String foxName) {
         model.addAttribute("fox", foxService.getFox(foxName));
         List<Trick> filter = foxService.getFox(foxName).getTrickList();
@@ -43,5 +43,5 @@ public class TrickController {
         newFox.getTrickList().add(trick);
         newFox.addAction(foxService.getDate() + " " + fox.getName() + " learned a this trick: " + trick);
         return "redirect:/?name=" + fox.getName();
-    }
+    }*/
 }

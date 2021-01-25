@@ -28,7 +28,7 @@ public class WellBeingController {
     @PostMapping(path = "/wellbeing")
     public String learnTricksPost(@ModelAttribute() Fox fox, @RequestParam(name = "treatString") String treat) {
         Fox newFox = foxService.getFox(fox.getName());
-        newFox.addAction(foxService.getDate() + " " + fox.getName() + "'s well being is maintained by a " + treat + ".");
+        //newFox.addAction(foxService.getDate() + " " + fox.getName() + "'s well being is maintained by a " + treat + ".");
         return "redirect:/?name=" + fox.getName();
     }
 }
