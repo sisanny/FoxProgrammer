@@ -1,80 +1,43 @@
 package com.example.foxprog.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 @Entity
 public class Fox {
     @Id
     private int id;
+
     @Column
     protected String name;
+
+    @OneToOne
     protected Drink drink;
+
+    @OneToOne
     protected Food food;
-    //protected List<Trick> trickList;
+
+    @OneToMany
+    protected List<Trick> trickList;
     //protected List<String> actions;
     //protected List<Treat> treatList;
     protected Mood mood;
 
-    public Fox() {
-    }
-
-    public Fox(String name, Drink drink, Food food, List<Trick> tricks, List<String> actions, List<Treat> treatList) {
-        this.name = name;
-        this.drink = drink;
-        this.food = food;
-        //this.trickList = tricks;
-        //this.actions = actions;
-        //this.treatList = treatList;
-    }
-
     public Fox(String name) {
         this.name = name;
-        this.drink = Drink.BEER;
-        this.food = Food.MUFFIN;
-        //trickList = new ArrayList<Trick>();
-        //actions = new ArrayList<String>();
-        //treatList = new ArrayList<Treat>();
-        this.mood = Mood.NORMAL;
     }
 
-    public Fox(String name, String drink, String food) {
-        this.name = name;
-        this.drink = Drink.BEER;
-        this.food = Food.MUFFIN;
-        //trickList = new ArrayList<Trick>();
-        //actions = new ArrayList<String>();
-        //treatList = new ArrayList<Treat>();
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public Drink getDrink() {
-        return drink;
-    }
-
-    public Food getFood() {
-        return food;
-    }
-
-    public void setDrink(Drink drink) {
-        this.drink = drink;
-    }
-
-    public void setFood(Food food) {
-        this.food = food;
-    }
 
     /*public Mood moodChanger() {
         if (actions.isEmpty()) {

@@ -1,24 +1,25 @@
 package com.example.foxprog.model;
 
-public enum Treat {
-    PET,
-    TALK,
-    PLAY,
-    HUG;
 
-    @Override
-    public String toString() {
-        switch (this) {
-            case PET:
-                return "pet";
-            case TALK:
-                return "talk";
-            case PLAY:
-                return "play";
-            case HUG:
-                return "hug";
-            default:
-                throw new IllegalArgumentException();
-        }
-    }
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@Entity
+public class Treat {
+
+    @Id
+    private int id;
+
+    @Column
+    private String name;
 }

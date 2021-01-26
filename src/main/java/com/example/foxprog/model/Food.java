@@ -1,30 +1,24 @@
 package com.example.foxprog.model;
 
-public enum Food {
-    TOMATO,
-    APPLE,
-    MUFFIN,
-    PASTA,
-    PIZZA,
-    CHOCOLATE;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-    @Override
-    public String toString() {
-        switch (this) {
-            case APPLE:
-                return "apple";
-            case PASTA:
-                return "pasta";
-            case PIZZA:
-                return "pizza";
-            case MUFFIN:
-                return "muffin";
-            case CHOCOLATE:
-                return "chocolate";
-            case TOMATO:
-                return "tomato";
-            default:
-                throw new IllegalArgumentException();
-        }
-    }
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@Entity
+public class Food {
+
+    @Id
+    private int id;
+
+    @Column
+    private String name;
 }
